@@ -1,0 +1,2 @@
+import { expect, test } from '@playwright/test'
+test('home page shows the portal shell and categories',async({page})=>{await page.goto('/');await expect(page).toHaveTitle(/Microportal Tools/);await expect(page.getByRole('heading',{name:/todo lo útil/i})).toBeVisible();for(const name of ['Calculadoras','Texto','Desarrollo','Imágenes'])await expect(page.getByRole('heading',{name})).toBeVisible()})

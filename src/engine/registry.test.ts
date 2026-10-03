@@ -2,9 +2,9 @@ import { describe, expect, it } from 'vitest'
 import { getToolById, getToolBySlug, getToolsByCategory, toolRegistry } from './registry'
 
 describe('tool registry', () => {
-  it('registers the eight approved tools with stable unique slugs', () => {
-    expect(toolRegistry).toHaveLength(8)
-    expect(new Set(toolRegistry.map((tool) => tool.id)).size).toBe(8)
+  it('registers the nine approved tools with stable unique slugs', () => {
+    expect(toolRegistry).toHaveLength(9)
+    expect(new Set(toolRegistry.map((tool) => tool.id)).size).toBe(9)
     expect(new Set(toolRegistry.map((tool) => tool.slug)).size).toBe(8)
     expect(toolRegistry.every((tool) => tool.localProcessing)).toBe(true)
   })
@@ -22,5 +22,7 @@ describe('tool registry', () => {
     expect(getToolsByCategory('developer').map((tool) => tool.id)).toEqual(['json-formatter', 'base64'])
     expect(getToolsByCategory('images').map((tool) => tool.id)).toEqual(['image-compressor', 'image-resizer', 'image-converter'])
     expect(getToolBySlug('comprimir-imagen')?.id).toBe('image-compressor')
+    expect(getToolBySlug('herramientas-pdf')?.id).toBe('pdf-page-tools')
+    expect(getToolsByCategory('documents').map((tool) => tool.id)).toEqual(['pdf-page-tools'])
   })
 })

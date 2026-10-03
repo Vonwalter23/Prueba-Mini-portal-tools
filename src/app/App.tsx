@@ -3,6 +3,7 @@ import {
   Calculator,
   Code2,
   FileText,
+  FileType,
   Image as ImageIcon,
   ShieldCheck,
   Wrench,
@@ -29,6 +30,12 @@ const categories = [
     name: 'Desarrollo',
     description: 'JSON y codificación Base64.',
     icon: Code2,
+  },
+  {
+    id: 'documents' as const,
+    name: 'Documentos',
+    description: 'Operaciones locales con archivos PDF.',
+    icon: FileType,
   },
   {
     id: 'images' as const,

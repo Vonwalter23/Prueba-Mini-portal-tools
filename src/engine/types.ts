@@ -3,6 +3,7 @@ export type ToolCategory =
   | 'text'
   | 'developer'
   | 'images'
+  | 'documents'
 
 export interface ToolDefinition {
   id: string

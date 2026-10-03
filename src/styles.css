@@ -29,3 +29,10 @@
 
 /* Stage 6: keyboard skip navigation */
 .skip-link{position:absolute;z-index:1000;top:8px;left:8px;transform:translateY(-160%);padding:11px 14px;border-radius:8px;background:#18212f;color:#fff;font-size:14px;font-weight:700;text-decoration:none}.skip-link:focus{transform:translateY(0)}
+
+
+/* Stage 12A: PDF page operations */
+.pdf-file-list{margin:0 0 18px;padding:15px;border:1px solid var(--line);border-radius:10px;background:#f8f9fc;font-size:13px}
+.pdf-file-list ul{margin:10px 0;padding-left:20px;color:#475467;font-size:12px;line-height:1.7;overflow-wrap:anywhere}
+.pdf-file-list .image-meta{margin-bottom:0}
+.pdf-download{margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}

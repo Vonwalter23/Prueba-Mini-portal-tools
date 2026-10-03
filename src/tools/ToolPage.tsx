@@ -6,6 +6,7 @@ import { calculatePercentage, type CalculatorMode } from './percentage-discount'
 import { cleanText } from './text-cleaner'
 import { decodeBase64, encodeBase64 } from './base64'
 import ImageToolPage from './image/ImageToolPage'
+import PdfToolsPage from './pdf/PdfToolsPage'
 
 interface ToolPageProps {
   tool: ToolDefinition
@@ -214,5 +215,6 @@ export function Link({ href, ...props }: AnchorHTMLAttributes<HTMLAnchorElement>
 
 export default function ToolPage({ tool }: ToolPageProps) {
   if (tool.category === 'images') return <ImageToolPage tool={tool} />
+  if (tool.category === 'documents') return <PdfToolsPage />
   return <CoreToolPage tool={tool} />
 }

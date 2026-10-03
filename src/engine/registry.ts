@@ -63,6 +63,18 @@ export const toolRegistry: readonly ToolDefinition[] = [
     },
   },
   {
+    id: 'pdf-page-tools',
+    slug: 'herramientas-pdf',
+    name: 'Herramientas para PDF',
+    description: 'Uní, extraé, rotá, reordená y eliminá páginas de archivos PDF.',
+    category: 'documents',
+    localProcessing: true,
+    seo: {
+      title: 'Herramientas PDF gratis: unir, dividir y rotar | Microportal Tools',
+      description: 'Uní PDF, extraé, rotá, reordená o eliminá páginas localmente en tu navegador, sin subir archivos.',
+    },
+  },
+  {
     id: 'image-compressor',
     slug: 'comprimir-imagen',
     name: 'Compresor de imágenes',

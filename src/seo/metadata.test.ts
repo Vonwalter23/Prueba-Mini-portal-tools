@@ -18,10 +18,10 @@ describe('route metadata', () => {
 
   it('resolves every registered tool with unique non-empty SEO metadata', () => {
     const routes = toolRegistry.map((tool) => resolveRouteMetadata(`/herramientas/${tool.slug}/`))
-    expect(routes).toHaveLength(8)
+    expect(routes).toHaveLength(9)
     expect(routes.every((route) => route.kind === 'tool')).toBe(true)
-    expect(new Set(routes.map((route) => route.title)).size).toBe(8)
-    expect(new Set(routes.map((route) => route.description)).size).toBe(8)
+    expect(new Set(routes.map((route) => route.title)).size).toBe(9)
+    expect(new Set(routes.map((route) => route.description)).size).toBe(9)
     expect(routes.every((route) => route.title.trim() && route.description.trim())).toBe(true)
   })
 

@@ -5,7 +5,7 @@ describe('tool registry', () => {
   it('registers the nine approved tools with stable unique slugs', () => {
     expect(toolRegistry).toHaveLength(9)
     expect(new Set(toolRegistry.map((tool) => tool.id)).size).toBe(9)
-    expect(new Set(toolRegistry.map((tool) => tool.slug)).size).toBe(8)
+    expect(new Set(toolRegistry.map((tool) => tool.slug)).size).toBe(9)
     expect(toolRegistry.every((tool) => tool.localProcessing)).toBe(true)
   })
 

@@ -36,8 +36,24 @@ jobs:
           npm run typecheck
           npm test
 
-      - name: Build for the temporary project URL
+      - name: Build main test portal
         run: GITHUB_PAGES=true npm run build
+
+      - name: Install isolated STAGE 12C dependencies
+        working-directory: experiments/stage-12c-docx-poc
+        run: |
+          npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+          npm ci
+          npm audit --audit-level=low
+
+      - name: Build isolated STAGE 12C PoC under its Pages path
+        working-directory: experiments/stage-12c-docx-poc
+        run: |
+          npm run build -- --base=/Prueba-Mini-portal-tools/experiments/stage-12c-docx-poc/
+          mkdir -p ../../dist/experiments/stage-12c-docx-poc
+          cp -R dist/. ../../dist/experiments/stage-12c-docx-poc/
+          test -s ../../dist/experiments/stage-12c-docx-poc/index.html
+          grep -q '/Prueba-Mini-portal-tools/experiments/stage-12c-docx-poc/assets/' ../../dist/experiments/stage-12c-docx-poc/index.html
 
       - name: Configure Pages artifact
         uses: actions/configure-pages@v5

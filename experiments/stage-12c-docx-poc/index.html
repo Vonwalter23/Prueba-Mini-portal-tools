@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <title>PoC aislada — DOCX a PDF</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="screen-only">
+        <p class="eyebrow">STAGE 12C · PRUEBA DE CONCEPTO</p>
+        <h1>Vista previa DOCX e impresión a PDF</h1>
+        <p class="notice">PoC técnica aislada. El archivo se procesa en este navegador; la salida PDF se obtiene mediante el diálogo de impresión del navegador.</p>
+      </header>
+      <section class="controls screen-only" aria-labelledby="input-heading">
+        <h2 id="input-heading">1. Seleccionar documento</h2>
+        <label for="docx-file">Archivo Word (.docx)</label>
+        <input id="docx-file" type="file" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+        <div class="actions">
+          <button id="print-button" type="button" disabled>Imprimir / Guardar como PDF</button>
+          <button id="clear-button" type="button" class="secondary" disabled>Limpiar</button>
+        </div>
+        <p id="status" role="status" aria-live="polite">Seleccione un archivo DOCX de prueba.</p>
+      </section>
+      <section class="preview-section" aria-labelledby="preview-heading">
+        <div class="preview-title screen-only">
+          <h2 id="preview-heading">2. Vista previa</h2>
+          <p>Revise saltos, tablas, imágenes y encabezados antes de imprimir.</p>
+        </div>
+        <div id="preview" class="document-preview" aria-label="Vista previa del documento Word"></div>
+      </section>
+      <footer class="screen-only">PoC experimental para pruebas. Use únicamente documentos sintéticos, no personales ni confidenciales.</footer>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

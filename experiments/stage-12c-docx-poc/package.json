@@ -1,0 +1,17 @@
+{
+  "name": "stage-12c-docx-print-poc",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Isolated technical proof of concept for local DOCX preview and browser print-to-PDF",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "docx-preview": "0.4.1"
+  },
+  "devDependencies": {
+    "vite": "6.4.3"
+  }
+}

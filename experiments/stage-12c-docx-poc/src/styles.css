@@ -1,13 +1,13 @@
 :root { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #202124; background: #f3f5f7; font-synthesis: none; }
 * { box-sizing: border-box; }
 body { margin: 0; }
-.app-shell { width: min(100% - 2rem, 1100px); margin: 0 auto; padding: 2rem 0 3rem; }
+.app-shell { width: min(100% - 2rem, 800px); margin: 0 auto; padding: 2rem 0 3rem; }
 h1 { margin: .25rem 0 .75rem; font-size: clamp(1.7rem, 4vw, 2.5rem); }
 h2 { margin: 0 0 .75rem; font-size: 1.1rem; }
 p { line-height: 1.55; }
 .eyebrow { color: #46566b; font-size: .8rem; font-weight: 700; letter-spacing: .08em; }
 .notice { padding: .9rem 1rem; border-left: 4px solid #6a7788; background: #e8edf2; }
-.controls, .preview-section { margin-top: 1.25rem; padding: 1.25rem; border: 1px solid #d5dbe2; border-radius: .75rem; background: white; }
+.controls { margin-top: 1.25rem; padding: 1.25rem; border: 1px solid #d5dbe2; border-radius: .75rem; background: white; }
 label { display: block; margin-bottom: .5rem; font-weight: 600; }
 input[type="file"] { max-width: 100%; }
 .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1rem; }
@@ -15,10 +15,16 @@ button { border: 1px solid #26384a; border-radius: .4rem; padding: .7rem 1rem; b
 button.secondary { background: white; color: #26384a; }
 button:disabled { cursor: not-allowed; opacity: .45; }
 #status { min-height: 1.5em; margin-bottom: 0; }
-.preview-title p { color: #4b5563; }
-.document-preview { overflow-x: auto; padding: 1rem 0; background: #e9edf1; }
-.document-preview .docx-wrapper { padding: 1rem 0 !important; }
-.document-preview .docx { margin: 0 auto 1rem; box-shadow: 0 1px 5px #0002; }
+.print-document { display: none; }
+.print-document .docx-wrapper { padding: 0 !important; }
+.print-document .docx { margin: 0 auto; }
 footer { margin-top: 1rem; color: #596273; font-size: .875rem; }
 @page { size: auto; margin: 18mm 16mm; }
-@media print { :root, body { background: white; } .app-shell { width: auto; margin: 0; padding: 0; } .screen-only { display: none !important; } .preview-section { margin: 0; padding: 0; border: 0; } .document-preview { overflow: visible; padding: 0; background: white; } .document-preview .docx-wrapper { padding: 0 !important; background: white !important; } .document-preview .docx { margin: 0 auto; box-shadow: none; } }
+@media print {
+  :root, body { background: white; }
+  .app-shell { width: auto; margin: 0; padding: 0; }
+  .screen-only { display: none !important; }
+  .print-document { display: block !important; }
+  .print-document .docx-wrapper { padding: 0 !important; background: white !important; }
+  .print-document .docx { margin: 0 auto; box-shadow: none; }
+}
